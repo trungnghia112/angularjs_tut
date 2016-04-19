@@ -10,36 +10,31 @@
     <script src="app.js"></script>
 </head>
 <body>
-<div class="container" ng-controller="mainController">
-    <h1>Hello {{name + '. Xin chao'}}</h1>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Home</a>
+        </div>
 
-    <div>
-        <label>tài khoan twitter của bạn là gì</label>
-        <input type="text" ng-model="username">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/">Book</a></li>
+                <li><a href="#/book/1">Chapter</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
     </div>
-    <hr>
-    <div class="alert" ng-class="{'alert-warning': username.length < usernamemax, 'alert-danger': username.length > usernamemax}" ng-if="username.length !== usernamemax">
-        Nhập vào {{usernamemax}} ký tự
+    <div class="container">
+        <div ng-view></div>
     </div>
-    <hr>
-    <h1>
-        <a target="_blank"
-           href="http://twitter.com/{{toLowerCaseUsername()}}">http://twitter/{{toLowerCaseUsername()}}</a>
-    </h1>
 
-    <hr>
-
-    <ul>
-        <li ng-repeat="rule in rules">
-            {{rule.ruleName}}
-        </li>
-    </ul>
-
-
-    <button ng-click="alertClick()">Click me</button>
-
-    <p ng-cloak>{{nameClick}}</p>
-
-</div>
+</nav>
 </body>
 </html>

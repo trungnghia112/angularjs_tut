@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="mainController">
+    <h1>Hello {{name + '. Xin chao'}}</h1>
+
+    <div>
+        <label>tài khoan twitter của bạn là gì</label>
+        <input type="text" ng-model="username">
+    </div>
+    <hr>
+    <div class="alert" ng-class="{'alert-warning': username.length < usernamemax, 'alert-danger': username.length > usernamemax}" ng-if="username.length !== usernamemax">
+        Nhập vào {{usernamemax}} ký tự
+    </div>
+    <hr>
+    <h1>
+        <a target="_blank"
+           href="http://twitter.com/{{toLowerCaseUsername()}}">http://twitter/{{toLowerCaseUsername()}}</a>
+    </h1>
+
+    <hr>
+
+    <ul>
+        <li ng-repeat="rule in rules">
+            {{rule.ruleName}}
+        </li>
+    </ul>
+
+
+    <button ng-click="alertClick()">Click me</button>
+
+    <p ng-cloak>{{nameClick}}</p>
+
+
+
+    <ul>
+        <li ng-repeat="item in data">
+            {{item.data.title}}
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>
