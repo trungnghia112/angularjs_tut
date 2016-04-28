@@ -4,6 +4,14 @@
 
     <h3>Search result</h3>
     <div class="list-group">
-        <search-result></search-result>
+        <!--<search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>-->
+        <search-result ng-repeat="person in people" person-object="person">
+            (*) Ke qua tim kiem gan dung
+        </search-result>
+
+
+        <!--<div search-result></div>
+        <div class="search-result"></div>
+        &lt;!&ndash; directive:search-result &ndash;&gt;-->
     </div>
 </main>
